@@ -21,11 +21,11 @@ export default {
   			name: "Jeremy",
   			position: "Founder"
   		},
-  		Ken: {
-  			img: "/image/egg/ken_egg.jpeg",
+  		Metastoke: {
+  			img: "/image/egg/metastoke_egg.jpeg",
   			loading: "/image/egg/loader_egg.png",
   			error: "/image/egg/loader_egg.png",
-  			name: "Ken",
+  			name: "Metastoke",
   			position: "Founder"
   		},
   		Johnny: {
