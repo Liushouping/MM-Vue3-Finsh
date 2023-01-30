@@ -2,13 +2,8 @@
 import { ref } from "vue";
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-
 export default {
-  props: {
-    isburimg: Boolean,
-  },
-  setup(props) {
-    //
+  setup() {
     const Luis_info = "Luis is a comic/manga artist from Spain whose art style is Ameri-manga. In the future, he will co-create of the comic future with the community and continue bringing fun stories and cool art to everyone.";
     // comic list
     const origin_ep1 = ref();

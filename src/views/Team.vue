@@ -176,11 +176,11 @@ export default {
 			    <!--  Team egg -->
 			    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 pb-24">
 			    	<div v-for="item in Egg"
-			    	class="bg-white flex flex-col rounded-[2rem] lg:rounded-[3rem] p-1 shadow-sm ">
+			    	class="bg-white flex flex-col rounded-[2rem] lg:rounded-[3rem] p-1 shadow-sm tt">
 			    		<div class="flex justify-center items-center">
-			    			<div class="rounded-[2rem] lg:rounded-[3rem] overflow-hidden">
+			    			<div class="relative rounded-[2rem] lg:rounded-[3rem] overflow-hidden">
 			    				<img 
-			    				v-lazy="{ src: item.img, loading: item.loading, error: item.error, delay: 50 }">
+			    				v-lazy="{ src: item.img, loading: item.loading, error: item.error, delay: 700 }">
 			    			</div>
 			    		</div>
 			    		<div class="flex flex-col justify-center items-center py-[0.5rem] lg:py-4">
@@ -254,6 +254,9 @@ export default {
 	    opacity: 1;
 	  }
 	  50% {
+	    opacity: .3;
+	  }
+	  75% {
 	    opacity: .5;
 	  }
 	}
@@ -267,5 +270,6 @@ export default {
   }
   img[lazy=loaded] {
     /*your style here*/
+
   }
 </style>

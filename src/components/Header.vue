@@ -1,5 +1,5 @@
 <script>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 export default {
   props: ['burcolor','isburimg'],
   setup() {
@@ -83,9 +83,6 @@ export default {
           :to="link.href"
           class="text-[14px] px-2">{{ link.name }}</router-link>
         </li>
-<!--         <li>
-          <button type="button" class="text-[14px] px-[12px] py-[0.1rem] text-white bg-[#ff5500] rounded-[0.5rem]">Mint</button>
-        </li> -->
       </ul>
       <div class="flex xl:hidden">
         <button :class="burcolor" class="w-10 h-10 relative focus:outline-none" @click="open = !open;fullpage = true;">
@@ -118,9 +115,6 @@ export default {
                 >{{ link.name }}</router-link
               >
             </li>
-<!--             <li>
-              <button type="button" class="text-[14px] px-[12px] py-[0.1rem] text-white bg-[#ff5500] rounded-[0.5rem]">Mint</button>
-            </li> -->
           </ul>
         </div>
         <!--  -->

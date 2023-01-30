@@ -17,10 +17,18 @@ export default {
   @touchmove.prevent
   class="relative w-full h-screen bg-gray-50 overflow-hidden">
     <!-- Header -->
-    <Header burcolor="text-[#ff5500]" isburimg="true" />
+    <Header 
+    burcolor="text-[#ff5500]" 
+    isburimg="true" />
     <!-- -->
     <HomeIndex />
     <!-- Footer -->
-    <Footer :iscard="true" title="FOMO Stone" textcolor="text-white" bgcolor="bg-[#ff5500]" crcolor="text-white" sicolor="fill-white" />
+    <Footer 
+    :iscard="true" 
+    title="FOMO Stone" 
+    textcolor="text-white" 
+    bgcolor="bg-[#ff5500]" 
+    crcolor="text-white" 
+    sicolor="fill-white" />
   </div>
 </template>

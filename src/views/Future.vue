@@ -3,9 +3,7 @@ import { ref, onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import MbHrFuture from '../components/MbHrFuture.vue';
@@ -15,88 +13,88 @@ export default {
   setup() {
     const triggers = ScrollTrigger.getAll();
 
-    const is_vision_body = ref(false);
-    const is_community_body = ref(false);
-    const is_web20_body = ref(false);
-    const is_web25_body = ref(false);
-    const is_web30_body = ref(false);
-    const is_fomostone_body = ref(false);
-    const is_mojo_body = ref(false);
+    const togglevision = ref(false);
+    const togglecommunity = ref(false);
+    const toggleweb20 = ref(false);
+    const toggleweb25 = ref(false);
+    const toggleweb30 = ref(false);
+    const togglefomostone = ref(false);
+    const togglemojo = ref(false);
 
     function mb_vision_drew() {
-      is_community_body.value = false;
-      is_web20_body.value = false;
-      is_web25_body.value = false;
-      is_web30_body.value = false;
-      is_fomostone_body.value = false;
-      is_mojo_body.value = false;
+      togglecommunity.value = false;
+      toggleweb20.value = false;
+      toggleweb25.value = false;
+      toggleweb30.value = false;
+      togglefomostone.value = false;
+      togglemojo.value = false;
 
-      is_vision_body.value =! is_vision_body.value;
+      togglevision.value =! togglevision.value;
     }
     function mb_community_drew() {
-      is_vision_body.value = false;
-      is_web20_body.value = false;
-      is_web25_body.value = false;
-      is_web30_body.value = false;
-      is_fomostone_body.value = false;
-      is_mojo_body.value = false;
+      togglevision.value = false;
+      toggleweb20.value = false;
+      toggleweb25.value = false;
+      toggleweb30.value = false;
+      togglefomostone.value = false;
+      togglemojo.value = false;
 
-      is_community_body.value =! is_community_body.value;
+      togglecommunity.value =! togglecommunity.value;
     }
 
     function mb_web20_drew() {
-      is_vision_body.value = false;
-      is_community_body.value = false;
-      is_web25_body.value = false;
-      is_web30_body.value = false;
-      is_fomostone_body.value = false;
-      is_mojo_body.value = false;
+      togglevision.value = false;
+      togglecommunity.value = false;
+      toggleweb25.value = false;
+      toggleweb30.value = false;
+      togglefomostone.value = false;
+      togglemojo.value = false;
 
-      is_web20_body.value =! is_web20_body.value;
+      toggleweb20.value =! toggleweb20.value;
     }
 
     function mb_web25_drew() {
-      is_vision_body.value = false;
-      is_community_body.value = false;
-      is_web20_body.value = false;
-      is_web30_body.value = false;
-      is_fomostone_body.value = false;
-      is_mojo_body.value = false;
+      togglevision.value = false;
+      togglecommunity.value = false;
+      toggleweb20.value = false;
+      toggleweb30.value = false;
+      togglefomostone.value = false;
+      togglemojo.value = false;
 
-      is_web25_body.value =! is_web25_body.value;
+      toggleweb25.value =! toggleweb25.value;
     }
 
     function mb_web30_drew() {
-      is_vision_body.value = false;
-      is_community_body.value = false;
-      is_web20_body.value = false;
-      is_web25_body.value = false;
-      is_fomostone_body.value = false;
-      is_mojo_body.value = false;
+      togglevision.value = false;
+      togglecommunity.value = false;
+      toggleweb20.value = false;
+      toggleweb25.value = false;
+      togglefomostone.value = false;
+      togglemojo.value = false;
 
-      is_web30_body.value =! is_web30_body.value;
+      toggleweb30.value =! toggleweb30.value;
     }
 
     function mb_fomostone_drew() {
-      is_vision_body.value = false;
-      is_community_body.value = false;
-      is_web20_body.value = false;
-      is_web25_body.value = false;
-      is_web30_body.value = false;
-      is_mojo_body.value = false;
+      togglevision.value = false;
+      togglecommunity.value = false;
+      toggleweb20.value = false;
+      toggleweb25.value = false;
+      toggleweb30.value = false;
+      togglemojo.value = false;
 
-      is_fomostone_body.value =! is_fomostone_body.value;
+      togglefomostone.value =! togglefomostone.value;
     }
 
     function mb_mojo_drew() {
-      is_vision_body.value = false;
-      is_community_body.value = false;
-      is_web20_body.value = false;
-      is_web25_body.value = false;
-      is_web30_body.value = false;
-      is_fomostone_body.value = false;
+      togglevision.value = false;
+      togglecommunity.value = false;
+      toggleweb20.value = false;
+      toggleweb25.value = false;
+      toggleweb30.value = false;
+      togglefomostone.value = false;
 
-      is_mojo_body.value =! is_mojo_body.value;
+      togglemojo.value =! togglemojo.value;
     }
 
     function scroll_vision() {
@@ -121,6 +119,15 @@ export default {
       gsap.to(window, 0.1, {scrollTo:900});
     }
 
+    function setup() {
+    createCanvas(300, 300)
+    background(100)
+  }
+
+  function draw() {
+    background(100)
+    circle(mouseX, mouseY, 40, 40)
+  }
     onMounted(() => {
       ScrollTrigger.refresh();
 
@@ -157,13 +164,13 @@ export default {
       scroll_fomo,
       scroll_mojo,
 
-      is_vision_body,
-      is_community_body,
-      is_web20_body,
-      is_web25_body,
-      is_web30_body,
-      is_fomostone_body,
-      is_mojo_body,
+      togglevision,
+      togglecommunity,
+      toggleweb20,
+      toggleweb25,
+      toggleweb30,
+      togglefomostone,
+      togglemojo,
 
       mb_vision_drew,
       mb_community_drew,
@@ -400,12 +407,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_vision_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer" 
-  :class="{ 'h-[400px] sm:h-[300px]' : is_vision_body }">
+  :class="{ 'h-[400px] sm:h-[300px]' : togglevision }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">VISION & VALUES</h5>
 
     <div 
-    v-if="is_vision_body" 
+    v-if="togglevision" 
     class="relative">
       <p class="text-[12px] indent-4 pt-8">The largest derivative manga NFT community in Web3. You can become whoever you want and the unique-self feature different manga elements.</p>
       <p class="text-[12px] indent-4 pt-2">You can participate in manga and theme song creation and other virtual and physical events, decide how the storyline evolving for the next work, and redeem and purchase physical GKs and merchandise. Come join the biggest manga community in Web3.
@@ -421,12 +428,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_community_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden" 
-  :class="{ 'h-[420px] sm:h-[340px]' : is_community_body }">
+  :class="{ 'h-[420px] sm:h-[340px]' : togglecommunity }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[22px] xs:text-[24px]">Community Development</h5>
 
     <div 
-    v-if="is_community_body">
+    v-if="togglecommunity">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- Community voice</h5>
         <p class="text-[12px] indent-4">From moderators and core members to community members, we value different voices. We are open for everyone’s opinion and feedback.</p>
@@ -447,12 +454,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_web20_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden" 
-  :class="{ 'h-[520px] sm:h-[420px]' : is_web20_body }">
+  :class="{ 'h-[520px] sm:h-[420px]' : toggleweb20 }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">WEB2.0</h5>
 
     <div 
-    v-if="is_web20_body">
+    v-if="toggleweb20">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- Everything About Manga</h5>
         <p class="text-[12px] indent-4">We are pushing MadManga forward by holding more physical events and re-designing our website. We will lead all of the manga lovers to experience everything.</p>
@@ -475,12 +482,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_web25_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden" 
-  :class="{ 'h-[350px] sm:h-[250px]' : is_web25_body }">
+  :class="{ 'h-[350px] sm:h-[250px]' : toggleweb25 }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">WEB2.5</h5>
 
     <div 
-    v-if="is_web25_body">
+    v-if="toggleweb25">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- Display Your Collection</h5>
         <p class="text-[12px] indent-4">Your NFTs are no long just JPEGs. With the implementation of AR techniques and our physical devices with our strategic partners and connections, you will be able to showcase your NFTs anytime, anywhere.</p>
@@ -499,12 +506,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_web30_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden" 
-  :class="{ 'h-[440px] sm:h-[350px]' : is_web30_body }">
+  :class="{ 'h-[440px] sm:h-[350px]' : toggleweb30 }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">WEB3.0</h5>
 
     <div 
-    v-if="is_web30_body">
+    v-if="toggleweb30">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- The Development of the Metaverse?</h5>
         <p class="text-[12px] indent-4">We know you are keen to know. At the same time, we have invested great amount of time in bridging the virtual and the physical world, including a Discord forum. It is highly possible that you can involve in some online gameplay within 1 to 2 years.</p>
@@ -525,12 +532,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_fomostone_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden"
-  :class="{ 'h-[350px] sm:h-[250px]' : is_fomostone_body }">
+  :class="{ 'h-[350px] sm:h-[250px]' : togglefomostone }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">FOMO Stone</h5>
 
     <div 
-    v-if="is_fomostone_body">
+    v-if="togglefomostone">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- Manga ID Card</h5>
         <p class="text-[12px] indent-4">FOMO Stone, an ID card in the adventurous Web3 world, stays with you forever. Holding it grants you all the benefits and access to virtual and physical events.</p>
@@ -549,12 +556,12 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
   <div 
   @click="mb_mojo_drew"
   class="relative bg-[#2D2D2D] border border-gray-500 rounded-[1.5rem] pt-3 px-4 pb-6 text-white w-full h-[60px] duration-200 ease-linear flex flex-col justify-start items-center cursor-pointer overflow-hidden" 
-  :class="{ 'h-[350px] sm:h-[250px]' : is_mojo_body }">
+  :class="{ 'h-[350px] sm:h-[250px]' : togglemojo }">
     <h5 
     class="font-TTOctosquaresBold text-white text-center text-[#ff5500] text-[24px]">Mojo Ecosystem</h5>
 
     <div 
-    v-if="is_mojo_body">
+    v-if="togglemojo">
       <div class="relative z-20">
         <h5 class="text-[14px] text-[#ff5500] pt-6 font-TTOctosquaresBold">- Mojo</h5>
         <p class="text-[12px] indent-4">As the mysterious and great energy from the MadManga universe, Mojo leads all NFTs move toward the progress of bridging the virtual and the physical world.</p>
@@ -584,7 +591,6 @@ style="background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0)
 </template>
 
 <style scoped>
-
 hr {
   height: 1px;
   background-color: #ff5500;
@@ -609,5 +615,4 @@ hr {
     scale: 1;
   }
 }
-
 </style>
